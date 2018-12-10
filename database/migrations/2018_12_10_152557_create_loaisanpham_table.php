@@ -14,8 +14,17 @@ class CreateLoaisanphamTable extends Migration
     public function up()
     {
         Schema::create('loaisanpham', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->engine = 'InnoDB'; // Ho tro Relationship
+            $table->unsignedTinyInteger('l_ma')
+                ->autoIncrement()
+                ->comment('Mã loại sản phẩm');
+            $table->string('l_ten',50)->comment('Tên sản phẩm');
+            $table->timestamp('l_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Tạo mới');
+            $table->timestamp('l_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Cập nhật ');
+            $table->unsignedTinyInteger('l_trangthai')->comment('1:đóng 2:khả dụng');  
+            
+            $table->unique(['l_ten']);
+
         });
     }
 
