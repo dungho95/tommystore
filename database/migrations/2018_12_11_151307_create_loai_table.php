@@ -19,7 +19,7 @@ class CreatLoaiTable extends Migration
                 ->autoIncrement()
                 ->comment('Mã loại sản phẩm');
             $table->string('lsp_ten',50);
-            $table->string('lsp_mota',150);
+            $table->string('lsp_moTa',150);
             $table->unique(['lsp_ma']);
             }
         );
