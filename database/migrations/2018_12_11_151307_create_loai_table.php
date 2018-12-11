@@ -21,6 +21,7 @@ class CreatLoaiTable extends Migration
             $table->string('lsp_ten',50);
             $table->string('lsp_moTa',150);
             $table->unique(['lsp_ma']);
+            $table->primary(['lsp_ma']);
             }
         );
     }
