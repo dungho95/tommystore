@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatSanphamTable extends Migration
+class CreateSanphamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -39,7 +39,7 @@ class CreatSanphamTable extends Migration
                     ->default(DB::raw('CURRENT_TIMESTAMP'))
                     ->comment('Sản phẩm cập nhật');
                 
-                $table->primary(['sp_ma']);
+                //$table->primary(['sp_ma']);
                 
                 $table->unsignedTinyInteger('lsp_ma');
                 $table->foreign(['lsp_ma'])

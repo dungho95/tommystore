@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatHinhthucthanhtoanTable extends Migration
+class CreateHinhthucthanhtoanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,7 @@ class CreatHinhthucthanhtoanTable extends Migration
             $table->string('httt_ten',50);
             
             $table->unique(['httt_ma']);
-            $table->primary(['httt_ma']);
+            //$table->primary(['httt_ma']);
             }
         );
     }

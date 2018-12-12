@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatLoaiTable extends Migration
+class CreateLoaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,7 @@ class CreatLoaiTable extends Migration
             $table->string('lsp_ten',50);
             $table->string('lsp_moTa',150);
             $table->unique(['lsp_ma']);
-            $table->primary(['lsp_ma']);
+            //$table->primary(['lsp_ma']);
             }
         );
     }

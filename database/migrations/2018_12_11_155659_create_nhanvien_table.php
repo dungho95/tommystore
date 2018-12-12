@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatNhanvienTable extends Migration
+class CreateNhanvienTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatNhanvienTable extends Migration
      */
     public function up()
     {
-        Schema::create('khachhang', function (Blueprint $table) {
+        Schema::create('nhanvien', function (Blueprint $table) {
             $table->engine = 'InnoDB';//Ho tro relationship
                 $table->unsignedBigInteger('nv_ma')
                     ->autoIncrement()
@@ -46,7 +46,7 @@ class CreatNhanvienTable extends Migration
                 $table->unique(['nv_ma']);
                 $table->unique(['nv_email']);
                 $table->unique(['nv_dienThoai']);
-                $table->primary(['nv_ma']);
+                //$table->primary(['nv_ma']);
                 $table->foreign('q_ma')->references('q_ma')->on('quyen')->onDelete('CASCADE')->onUpdate('CASCADE');
 
         }
@@ -60,6 +60,6 @@ class CreatNhanvienTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('nhanvien');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatQuyenTable extends Migration
+class CreateQuyenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,7 @@ class CreatQuyenTable extends Migration
             $table->string('q_ten',50);
             $table->string('q_noiDung',150);
             $table->unique(['q_ma']);
-            $table->primary(['q_ma']);
+            //$table->primary(['q_ma']);
             }
         );
     }

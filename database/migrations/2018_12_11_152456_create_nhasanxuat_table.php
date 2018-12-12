@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatNhasanxuatTable extends Migration
+class CreateNhasanxuatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class CreatNhasanxuatTable extends Migration
                 ->comment('Ma nha san xuat');
             $table->string('nsx_ten',50);
             $table->unique(['nsx_ma']);
-            $table->primary(['nsx_ma']);
+            //$table->primary(['nsx_ma']);
             }
         );
     }

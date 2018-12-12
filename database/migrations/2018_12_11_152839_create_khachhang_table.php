@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatKhachhangTable extends Migration
+class CreateKhachhangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreatKhachhangTable extends Migration
                 $table->unsignedBigInteger('kh_ma')
                     ->autoIncrement()
                     ->comment('Mã khách hàng');
-                
+                $table->string('kh_taiKhoan',50);
                 $table->string('kh_matKhau',32)
                 ;
                 $table->string('kh_hoTen',100)
@@ -41,10 +41,11 @@ class CreatKhachhangTable extends Migration
                     ;
                 $table->unsignedTinyInteger('kh_trangThai')
                     ->default('3');
+                $table->unique(['kh_ma']);
                 $table->unique(['kh_taiKhoan']);
                 $table->unique(['kh_email']);
                 $table->unique(['kh_dienThoai']);
-                $table->primary(['kh_ma']);
+                //$table->primary(['kh_ma']);
         }
     ); 
     }
