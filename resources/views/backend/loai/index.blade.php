@@ -1,4 +1,11 @@
 
+@extends('backend.layouts.index')
+
+@section('title')
+Danh sach loai san pham
+@endsection
+
+@section('main-content')
 <h1><span style="color:red;">DANH SÁCH LOẠI SẢN PHẨM</span></h1>
 <div class="flash-message">
     @foreach(['danger','warning', 'success','info'] as $msg)
@@ -21,8 +28,8 @@
      <tbody>
     @foreach($danhsachloai as $loai)
         <tr>
-            <td>{{$loai ->l_ma}}</td>
-            <td>{{$loai ->l_ten}}</td>
+            <td>{{$loai ->lsp_ma}}</td>
+            <td>{{$loai ->lsp_ten}}</td>
             <td><a href="#">Sua</a></td>
             <td>
                 <form method="post" action="#">
@@ -35,3 +42,4 @@
     @endforeach
     </tbody>
 </table>
+@endsection
