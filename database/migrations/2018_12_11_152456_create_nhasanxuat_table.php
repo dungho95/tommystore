@@ -20,6 +20,7 @@ class CreateNhasanxuatTable extends Migration
                 ->comment('Ma nha san xuat');
             $table->string('nsx_ten',50);
             $table->unique(['nsx_ma']);
+            $table->unsignedTinyInteger('nsx_trangThai')->comment('1:đóng 2:khả dụng');
             //$table->primary(['nsx_ma']);
             }
         );

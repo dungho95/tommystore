@@ -21,9 +21,11 @@ class CreatePhieunhapTable extends Migration
             $table->timestamp('pn_ngayNhap')
                 ->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->unsignedBigInteger('nv_ma');
+            
             $table->unique(['pn_ma']);
             //$table->primary(['pn_ma']);
             $table->foreign('nv_ma')->references('nv_ma')->on('nhanvien')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedTinyInteger('pn_trangThai')->comment('1:đóng 2:khả dụng');
             }
         );
     }

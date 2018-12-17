@@ -20,7 +20,9 @@ class CreateQuyenTable extends Migration
                 ->comment('Mã quyen');
             $table->string('q_ten',50);
             $table->string('q_noiDung',150);
+            $table->unsignedTinyInteger('q_trangThai')->comment('1:đóng 2:khả dụng');
             $table->unique(['q_ma']);
+            
             //$table->primary(['q_ma']);
             }
         );

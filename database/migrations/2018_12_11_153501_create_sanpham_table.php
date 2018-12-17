@@ -20,12 +20,12 @@ class CreateSanphamTable extends Migration
                     ->comment('Mã sản phẩm');
                 $table->string('sp_ten',200)
                     ->comment('Tên  sản phầm');
-                $table->integer('sp_giaCu')
-                    ->default('0')
-                    ->comment('Giá sản phẩm');
-                $table->integer('sp_giaMoi')
-                    ->default('0')
-                    ->comment('Giá bán sản phẩm');
+                $table
+                    ->integer('sp_giaGoc')
+                    ->comment('Giá Gốc');
+                $table
+                    ->integer('sp_giaBan')
+                    ->comment('Giá Bán');
                 $table->string('sp_hinh',200)
                     ->comment('Hình sản phẩm');
                 $table->text('sp_thongTin')
@@ -50,7 +50,9 @@ class CreateSanphamTable extends Migration
                 $table->foreign(['nsx_ma'])
                         ->references('nsx_ma')
                         ->on('nhasanxuat');
+                $table->unsignedTinyInteger('sp_trangThai')->comment('1:đóng 2:khả dụng');
                 });
+                
     }
 
     /**

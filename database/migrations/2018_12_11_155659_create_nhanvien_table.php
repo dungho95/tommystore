@@ -36,9 +36,14 @@ class CreateNhanvienTable extends Migration
                 $table->string('nv_dienThoai',11)
                     ->default('NULL')
                     ;
-                $table->dateTime('kh_ngayDangKy')
+                $table
+                    ->timestamp('nv_taoMoi')
                     ->default(DB::raw('CURRENT_TIMESTAMP'))
-                    ;
+                    ->comment('Tạo mới');
+                $table
+                    ->timestamp('nv_capNhat')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'))
+                    ->comment('Cập nhật ');
                 
                 $table->unsignedTinyInteger('nv_trangThai')
                     ->default('3');

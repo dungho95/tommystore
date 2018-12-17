@@ -21,6 +21,7 @@ class CreateLoaiTable extends Migration
             $table->string('lsp_ten',50);
             $table->string('lsp_moTa',150);
             $table->unique(['lsp_ma']);
+            $table->unsignedTinyInteger('lsp_trangThai')->comment('1:đóng 2:khả dụng');  
             //$table->primary(['lsp_ma']);
             }
         );
