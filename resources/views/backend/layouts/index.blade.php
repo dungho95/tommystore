@@ -1,642 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
 <head>
-	<!-- Required meta tags-->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="au theme template">
-	<meta name="author" content="Hau Nguyen">
-	<meta name="keywords" content="au theme template">
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>@yield('title')</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="{{asset('theme/adminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('theme/adminLTE/bower_components/font-awesome/css/font-awesome.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{asset('theme/adminLTE/bower_components/Ionicons/css/ionicons.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('theme/adminLTE/dist/css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="{{asset('theme/adminLTE/dist/css/skins/skin-blue.min.css')}}">
 
-	<!-- Title Page-->
-	<title>@yield('title')</title>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-	<!-- Fontfaces CSS-->
-	<link href="css/font-face.css" rel="stylesheet" media="all">
-	<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-	<link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-	<link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-	<!-- Bootstrap CSS-->
-	<link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-	<!-- Vendor CSS-->
-	<link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-	<link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-	<link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-	<link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-	<link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-	<link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-	<link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-	<!-- Main CSS-->
-	<link href="css/theme.css" rel="stylesheet" media="all">
-
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-<body class="animsition">
-	<div class="page-wrapper">
-		<!-- HEADER MOBILE-->
-		<header class="header-mobile d-block d-lg-none">
-			<div class="header-mobile__bar">
-				<div class="container-fluid">
-					<div class="header-mobile-inner">
-						<a class="logo" href="index.html">
-							<img src="images/icon/logo.png" alt="CoolAdmin" />
-						</a>
-						<button class="hamburger hamburger--slider" type="button">
-							<span class="hamburger-box">
-								<span class="hamburger-inner"></span>
-							</span>
-						</button>
-					</div>
-				</div>
-			</div>
-			<nav class="navbar-mobile">
-				<div class="container-fluid">
-					<ul class="navbar-mobile__list list-unstyled">
-						<li class="has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-tachometer-alt"></i>Dashboard</a>
-							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-								<li>
-									<a href="index.html">Dashboard 1</a>
-								</li>
-								<li>
-									<a href="index2.html">Dashboard 2</a>
-								</li>
-								<li>
-									<a href="index3.html">Dashboard 3</a>
-								</li>
-								<li>
-									<a href="index4.html">Dashboard 4</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="chart.html">
-								<i class="fas fa-chart-bar"></i>Charts</a>
-						</li>
-						<li>
-							<a href="table.html">
-								<i class="fas fa-table"></i>Tables</a>
-						</li>
-						<li>
-							<a href="form.html">
-								<i class="far fa-check-square"></i>Forms</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fas fa-calendar-alt"></i>Calendar</a>
-						</li>
-						<li>
-							<a href="map.html">
-								<i class="fas fa-map-marker-alt"></i>Maps</a>
-						</li>
-						<li class="has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-copy"></i>Pages</a>
-							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-								<li>
-									<a href="login.html">Login</a>
-								</li>
-								<li>
-									<a href="register.html">Register</a>
-								</li>
-								<li>
-									<a href="forget-pass.html">Forget Password</a>
-								</li>
-							</ul>
-						</li>
-						<li class="has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-desktop"></i>UI Elements</a>
-							<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-								<li>
-									<a href="button.html">Button</a>
-								</li>
-								<li>
-									<a href="badge.html">Badges</a>
-								</li>
-								<li>
-									<a href="tab.html">Tabs</a>
-								</li>
-								<li>
-									<a href="card.html">Cards</a>
-								</li>
-								<li>
-									<a href="alert.html">Alerts</a>
-								</li>
-								<li>
-									<a href="progress-bar.html">Progress Bars</a>
-								</li>
-								<li>
-									<a href="modal.html">Modals</a>
-								</li>
-								<li>
-									<a href="switch.html">Switchs</a>
-								</li>
-								<li>
-									<a href="grid.html">Grids</a>
-								</li>
-								<li>
-									<a href="fontawesome.html">Fontawesome Icon</a>
-								</li>
-								<li>
-									<a href="typo.html">Typography</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</header>
-		<!-- END HEADER MOBILE-->
+  <!-- Main Header -->
+  <header class="main-header">
 
-		<!-- MENU SIDEBAR-->
-		<aside class="menu-sidebar d-none d-lg-block">
-			<div class="logo">
-				<a href="#">
-					<img src="images/icon/logo.png" alt="Cool Admin" />
-				</a>
-			</div>
-			<div class="menu-sidebar__content js-scrollbar1">
-				<nav class="navbar-sidebar">
-					<ul class="list-unstyled navbar__list">
-						<li class="has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-tachometer-alt"></i>Dashboard</a>
-							<ul class="list-unstyled navbar__sub-list js-sub-list">
-								<li>
-									<a href="index.html">Dashboard 1</a>
-								</li>
-								<li>
-									<a href="index2.html">Dashboard 2</a>
-								</li>
-								<li>
-									<a href="index3.html">Dashboard 3</a>
-								</li>
-								<li>
-									<a href="index4.html">Dashboard 4</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="chart.html">
-								<i class="fas fa-chart-bar"></i>Charts</a>
-						</li>
-						<li>
-							<a href="table.html">
-								<i class="fas fa-table"></i>Tables</a>
-						</li>
-						<li>
-							<a href="form.html">
-								<i class="far fa-check-square"></i>Forms</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fas fa-calendar-alt"></i>Calendar</a>
-						</li>
-						<li>
-							<a href="map.html">
-								<i class="fas fa-map-marker-alt"></i>Maps</a>
-						</li>
-						<li class="has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-copy"></i>Pages</a>
-							<ul class="list-unstyled navbar__sub-list js-sub-list">
-								<li>
-									<a href="login.html">Login</a>
-								</li>
-								<li>
-									<a href="register.html">Register</a>
-								</li>
-								<li>
-									<a href="forget-pass.html">Forget Password</a>
-								</li>
-							</ul>
-						</li>
-						<li class="active has-sub">
-							<a class="js-arrow" href="#">
-								<i class="fas fa-desktop"></i>UI Elements</a>
-							<ul class="list-unstyled navbar__sub-list js-sub-list">
-								<li>
-									<a href="button.html">Button</a>
-								</li>
-								<li>
-									<a href="badge.html">Badges</a>
-								</li>
-								<li>
-									<a href="tab.html">Tabs</a>
-								</li>
-								<li>
-									<a href="card.html">Cards</a>
-								</li>
-								<li>
-									<a href="alert.html">Alerts</a>
-								</li>
-								<li>
-									<a href="progress-bar.html">Progress Bars</a>
-								</li>
-								<li>
-									<a href="modal.html">Modals</a>
-								</li>
-								<li>
-									<a href="switch.html">Switchs</a>
-								</li>
-								<li>
-									<a href="grid.html">Grids</a>
-								</li>
-								<li>
-									<a href="fontawesome.html">Fontawesome Icon</a>
-								</li>
-								<li>
-									<a href="typo.html">Typography</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</aside>
-		<!-- END MENU SIDEBAR-->
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
 
-		<!-- PAGE CONTAINER-->
-		<div class="page-container">
-			<!-- HEADER DESKTOP-->
-			<header class="header-desktop">
-				<div class="section__content section__content--p30">
-					<div class="container-fluid">
-						<div class="header-wrap">
-							<form class="form-header" action="" method="POST">
-								<input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-								<button class="au-btn--submit" type="submit">
-									<i class="zmdi zmdi-search"></i>
-								</button>
-							</form>
-							<div class="header-button">
-								<div class="noti-wrap">
-									<div class="noti__item js-item-menu">
-										<i class="zmdi zmdi-comment-more"></i>
-										<span class="quantity">1</span>
-										<div class="mess-dropdown js-dropdown">
-											<div class="mess__title">
-												<p>You have 2 news message</p>
-											</div>
-											<div class="mess__item">
-												<div class="image img-cir img-40">
-													<img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
-												</div>
-												<div class="content">
-													<h6>Michelle Moreno</h6>
-													<p>Have sent a photo</p>
-													<span class="time">3 min ago</span>
-												</div>
-											</div>
-											<div class="mess__item">
-												<div class="image img-cir img-40">
-													<img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
-												</div>
-												<div class="content">
-													<h6>Diane Myers</h6>
-													<p>You are now connected on message</p>
-													<span class="time">Yesterday</span>
-												</div>
-											</div>
-											<div class="mess__footer">
-												<a href="#">View all messages</a>
-											</div>
-										</div>
-									</div>
-									<div class="noti__item js-item-menu">
-										<i class="zmdi zmdi-email"></i>
-										<span class="quantity">1</span>
-										<div class="email-dropdown js-dropdown">
-											<div class="email__title">
-												<p>You have 3 New Emails</p>
-											</div>
-											<div class="email__item">
-												<div class="image img-cir img-40">
-													<img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-												</div>
-												<div class="content">
-													<p>Meeting about new dashboard...</p>
-													<span>Cynthia Harvey, 3 min ago</span>
-												</div>
-											</div>
-											<div class="email__item">
-												<div class="image img-cir img-40">
-													<img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-												</div>
-												<div class="content">
-													<p>Meeting about new dashboard...</p>
-													<span>Cynthia Harvey, Yesterday</span>
-												</div>
-											</div>
-											<div class="email__item">
-												<div class="image img-cir img-40">
-													<img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-												</div>
-												<div class="content">
-													<p>Meeting about new dashboard...</p>
-													<span>Cynthia Harvey, April 12,,2018</span>
-												</div>
-											</div>
-											<div class="email__footer">
-												<a href="#">See all emails</a>
-											</div>
-										</div>
-									</div>
-									<div class="noti__item js-item-menu">
-										<i class="zmdi zmdi-notifications"></i>
-										<span class="quantity">3</span>
-										<div class="notifi-dropdown js-dropdown">
-											<div class="notifi__title">
-												<p>You have 3 Notifications</p>
-											</div>
-											<div class="notifi__item">
-												<div class="bg-c1 img-cir img-40">
-													<i class="zmdi zmdi-email-open"></i>
-												</div>
-												<div class="content">
-													<p>You got a email notification</p>
-													<span class="date">April 12, 2018 06:50</span>
-												</div>
-											</div>
-											<div class="notifi__item">
-												<div class="bg-c2 img-cir img-40">
-													<i class="zmdi zmdi-account-box"></i>
-												</div>
-												<div class="content">
-													<p>Your account has been blocked</p>
-													<span class="date">April 12, 2018 06:50</span>
-												</div>
-											</div>
-											<div class="notifi__item">
-												<div class="bg-c3 img-cir img-40">
-													<i class="zmdi zmdi-file-text"></i>
-												</div>
-												<div class="content">
-													<p>You got a new file</p>
-													<span class="date">April 12, 2018 06:50</span>
-												</div>
-											</div>
-											<div class="notifi__footer">
-												<a href="#">All notifications</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="account-wrap">
-									<div class="account-item clearfix js-item-menu">
-										<div class="image">
-											<img src="images/icon/avatar-01.jpg" alt="John Doe" />
-										</div>
-										<div class="content">
-											<a class="js-acc-btn" href="#">john doe</a>
-										</div>
-										<div class="account-dropdown js-dropdown">
-											<div class="info clearfix">
-												<div class="image">
-													<a href="#">
-														<img src="images/icon/avatar-01.jpg" alt="John Doe" />
-													</a>
-												</div>
-												<div class="content">
-													<h5 class="name">
-														<a href="#">john doe</a>
-													</h5>
-													<span class="email">johndoe@example.com</span>
-												</div>
-											</div>
-											<div class="account-dropdown__body">
-												<div class="account-dropdown__item">
-													<a href="#">
-														<i class="zmdi zmdi-account"></i>Account</a>
-												</div>
-												<div class="account-dropdown__item">
-													<a href="#">
-														<i class="zmdi zmdi-settings"></i>Setting</a>
-												</div>
-												<div class="account-dropdown__item">
-													<a href="#">
-														<i class="zmdi zmdi-money-box"></i>Billing</a>
-												</div>
-											</div>
-											<div class="account-dropdown__footer">
-												<a href="#">
-													<i class="zmdi zmdi-power"></i>Logout</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</header>
-			<!-- END HEADER DESKTOP-->
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the messages -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <!-- User Image -->
+                        <img src="{{asset('theme/adminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                      </div>
+                      <!-- Message title and timestamp -->
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <!-- The message -->
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                </ul>
+                <!-- /.menu -->
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- /.messages-menu -->
 
-			<!-- MAIN CONTENT-->
-			
-            <section class="main-content">
-                @yield('main-content')
-			</section>
-			<!-- modal small -->
-			<div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-sm" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="smallmodalLabel">Small Modal</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<p>
-								There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain
-								zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter
-								resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the
-								genus Equus, along with other living equids.
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal small -->
+          <!-- Notifications Menu -->
+          <li class="dropdown notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- Inner Menu: contains the notifications -->
+                <ul class="menu">
+                  <li><!-- start notification -->
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <!-- end notification -->
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Tasks Menu -->
+          <li class="dropdown tasks-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- Inner menu: contains the tasks -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <!-- Task title and progress text -->
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <!-- The progress bar -->
+                      <div class="progress xs">
+                        <!-- Change the css width attribute to simulate progress -->
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="{{asset('theme/adminLTE/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="{{asset('theme/adminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
 
-			<!-- modal medium -->
-			<div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="mediumModalLabel">Medium Modal</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<p>
-								There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain
-								zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter
-								resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the
-								genus Equus, along with other living equids.
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal medium -->
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
 
-			<!-- modal large -->
-			<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<p>
-								There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain
-								zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter
-								resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the
-								genus Equus, along with other living equids.
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal large -->
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
 
-			<!-- modal scroll -->
-			<div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="scrollmodalLabel">Scrolling Long Content Modal</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<p>
-								Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-								risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-								<br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-								leo risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-								<br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-								leo risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-								<br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-								leo risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-								<br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-								leo risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-								<br> Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-								leo risus, porta ac consectetur ac, vestibulum at eros.
-								<br> Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum
-								faucibus dolor auctor.
-								<br> Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-								Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal scroll -->
-			<!-- modal static -->
-			<div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true"
-			 data-backdrop="static">
-				<div class="modal-dialog modal-sm" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticModalLabel">Static Modal</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<p>
-								This is a static modal, backdrop click will not close it.
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary">Confirm</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end modal static -->
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{asset('theme/adminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
 
-		</div>
-		<!-- END PAGE CONTAINER-->
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+        </div>
+      </form>
+      <!-- /.search form -->
 
-	</div>
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">HEADER</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Link in level 2</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
 
-	<!-- Jquery JS-->
-	<script src="vendor/jquery-3.2.1.min.js"></script>
-	<!-- Bootstrap JS-->
-	<script src="vendor/bootstrap-4.1/popper.min.js"></script>
-	<script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-	<!-- Vendor JS       -->
-	<script src="vendor/slick/slick.min.js">
-	</script>
-	<script src="vendor/wow/wow.min.js"></script>
-	<script src="vendor/animsition/animsition.min.js"></script>
-	<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-	</script>
-	<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-	<script src="vendor/counter-up/jquery.counterup.min.js">
-	</script>
-	<script src="vendor/circle-progress/circle-progress.min.js"></script>
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-	<script src="vendor/chartjs/Chart.bundle.min.js"></script>
-	<script src="vendor/select2/select2.min.js">
-	</script>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Page Header
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
 
-	<!-- Main JS-->
-	<script src="js/main.js"></script>
+    <!-- Main content -->
+    <section class="content container-fluid">
 
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+		@yield('main-content')
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane active" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="pull-right-container">
+                    <span class="label label-danger pull-right">70%</span>
+                  </span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="{{asset('theme/adminLTE/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{asset('theme/adminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('theme/adminLTE/dist/js/adminlte.min.js')}}"></script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
 </body>
-
 </html>
-<!-- end document-->

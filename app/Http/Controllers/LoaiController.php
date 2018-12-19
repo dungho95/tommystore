@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Loai;
+use Session;
+use App\Http\Requests\LoaiRequest;
 
 class LoaiController extends Controller
 {
