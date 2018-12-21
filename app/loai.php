@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Loai extends Model
 {
+    public    $timestamps   = false;
+    
     protected $table        ='loai';
     protected $fillable     =['lsp_ten','lsp_moTa','lsp_trangThai'];
     protected $guarded      =['lsp_ma'];

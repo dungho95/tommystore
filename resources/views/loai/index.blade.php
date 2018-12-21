@@ -6,22 +6,24 @@ Danh sach loai san pham
 @endsection
 
 @section('main-content')
-<h1><span style="color:red;">DANH SÁCH LOẠI SẢN PHẨM</span></h1>
+<h2><span style="color:#f94141"><b>DANH SÁCH LOẠI SẢN PHẨM</b></span></h2>
+<a href="{{route('danhsachloai.create') }}"> <button type="button" class="btn btn-warning">Thêm mới</button></a>
 <div class="flash-message">
     @foreach(['danger','warning', 'success','info'] as $msg)
         @if(Session::has('alert-'.$msg))
         <p class="alert alert-{{$msg}}">{{Session::get('alert-'. $msg)}}<a href="#" class="lose" data-dismiss="alert" aria-lable="lose">&times;</a></p>
         @endif
     @endforeach
-
 </div>
-
-<table  class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+<div class="box-body">
+<table id="example2" class="table table-bordered table-hover">
 <thead>
     <tr>
-        <th>Ma</th>
-        <th>Ten</th>
-        <td>Action</td>
+        <th>Mã</th>
+        <th>Tên loại sản phẩm</th>
+        <th>Mô tả</th>
+        <th>Trạng thái</th>
+        <td>Sửa</td>
         <td>Xóa</td>
     </tr>
     </thead>
@@ -30,9 +32,11 @@ Danh sach loai san pham
         <tr>
             <td>{{$loai ->lsp_ma}}</td>
             <td>{{$loai ->lsp_ten}}</td>
-            <td><a href="#">Sua</a></td>
+            <td>{{$loai ->lsp_moTa}}</td>
+            <td>{{$loai ->lsp_trangThai == 1 ? "Khóa" : "Khả dụng"}}</td>
+            <td><a href="{{route('danhsachloai.edit',['id'=> $loai->lsp_ma]) }}">Sửa</a></td>
             <td>
-                <form method="post" action="#">
+                <form method="post" action="{{ route('danhsachloai.destroy', ['id' => $loai->lsp_ma]) }}">
                 <input type="hidden" name="_method" value="DELETE"/>
                 {{ csrf_field()}}
                 <button type="submit" class="btn btn-danger">Xóa</button>
@@ -42,4 +46,5 @@ Danh sach loai san pham
     @endforeach
     </tbody>
 </table>
+</div>
 @endsection
