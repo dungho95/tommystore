@@ -13,6 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
+    
 });
 
+
 Route::resource('admin/danhsachloai','LoaiController');
+Route::resource('admin/danhsachquyen','QuyenController');
+Route::resource('admin/danhsachnhasanxuat','NhasanxuatController');
+Route::resource('admin/danhsachnhanvien','NhanvienController');
