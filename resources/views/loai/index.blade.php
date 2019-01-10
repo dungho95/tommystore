@@ -23,8 +23,8 @@ Danh sach loai san pham
         <th>Tên loại sản phẩm</th>
         <th>Mô tả</th>
         <th>Trạng thái</th>
-        <td>Sửa</td>
-        <td>Xóa</td>
+        <td></td>
+        <td></td>
     </tr>
     </thead>
      <tbody>
@@ -34,7 +34,7 @@ Danh sach loai san pham
             <td>{{$loai ->lsp_ten}}</td>
             <td>{{$loai ->lsp_moTa}}</td>
             <td>{{$loai ->lsp_trangThai == 1 ? "Khóa" : "Khả dụng"}}</td>
-            <td><a href="{{route('danhsachloai.edit',['id'=> $loai->lsp_ma]) }}">Sửa</a></td>
+            <td><a href="{{route('danhsachloai.edit',['id'=> $loai->lsp_ma]) }}"><button type="button" class="btn btn-warning">Sửa</button></a></td>
             <td>
                 <form method="post" action="{{ route('danhsachloai.destroy', ['id' => $loai->lsp_ma]) }}">
                 <input type="hidden" name="_method" value="DELETE"/>

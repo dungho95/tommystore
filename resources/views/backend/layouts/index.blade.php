@@ -39,6 +39,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+ <!-- Các custom style của backend -->
+<link rel="stylesheet" href="{{asset('css/custom-styles.css')}}">
+ <!--Các custom css dành riêng cho từng view -->
+    @yield('custom-css')   
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -237,11 +241,10 @@ desired effect
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{asset('theme/adminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+          <img src="{{ asset('theme/adminlte/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Alexander Pierce</p>
@@ -249,7 +252,6 @@ desired effect
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
@@ -261,24 +263,41 @@ desired effect
         </div>
       </form>
       <!-- /.search form -->
-
       <!-- Sidebar Menu -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+      <ul class="sidebar-menu" data-widget="tree" data-api="tree">
+        <li class="header">Danh mục</li>
+        
+        <!-- Danh mục Sản phẩm -->
+        <li class="treeview {{ Request::is('admin/danhsachsanpham*') ? 'menu-open' : '' }}">
+          <a href="#"><i class="fa fa-link"></i> <span>Danh mục sản phẩm</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.index') }}">Nhân viên</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachquyen.create') }}">Quyền</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.create') }}">Thêm mới nhân viên</a></li>
+          </ul>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.index') }}">Nhà sản xuất</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.create') }}">Thêm mới nhà sản xuất</a></li>
+          </ul>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachloai.index') }}">Loại sản phẩm</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachloai.create') }}">Thêm mới loại sản phẩm</a></li>
+          </ul>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachsanpham.index') }}">Sản phẩm</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachsanpham.create') }}">Thêm mới sản phẩm</a></li>
+          </ul>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.index') }}">Hình thức thanh toán</a></li>
+            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.create') }}">Thêm mới HTTT</a></li>
           </ul>
         </li>
+        <!-- /.Danh mục Sản phẩm -->
+        
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -436,5 +455,7 @@ desired effect
     })
   })
 </script>
+<!--Các custom script dành riêng cho từng view -->
+@yield('custom-scripts')
 </body>
 </html>

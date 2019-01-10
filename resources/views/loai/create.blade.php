@@ -6,6 +6,7 @@ Thêm mới loại sản phẩm
 @endsection
 
 @section('main-content')
+<a href="{{route('danhsachloai.index') }}"> <button type="button" class="btn btn-default"><img src="{{asset('theme/AdminLTE/img/left-arrow.png')}}" /></button></a>
 <h2><span style="color:#f94141"><b>THÊM LOẠI SẢN PHẨM</b></span></h2>
 <form role="form" id="frmThemLoaiSanPham" method="POST" action="{{route('danhsachloai.store')}}" enctype="multipart/form-data  ">
                    <input type="hidden" name="_method" value="POST" />
