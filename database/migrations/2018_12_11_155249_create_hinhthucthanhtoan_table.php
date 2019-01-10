@@ -16,7 +16,7 @@ class CreateHinhthucthanhtoanTable extends Migration
         Schema::create('hinhthucthanhtoan', function (Blueprint $table) {
             $table->engine = 'InnoDB';//Ho tro relationship
             $table->unsignedTinyInteger('httt_ma')
-            
+                ->autoIncrement()
                 ->comment('Mã hình thức thanh toán');
             $table->string('httt_ten',50);
             $table->unsignedTinyInteger('httt_trangThai')->comment('1:đóng 2:khả dụng');

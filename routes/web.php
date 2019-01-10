@@ -16,8 +16,9 @@ Route::get('/', function () {
     
 });
 
-
+Route::resource('admin/checklogin', 'MainController');
 Route::resource('admin/danhsachloai','LoaiController');
 Route::resource('admin/danhsachquyen','QuyenController');
 Route::resource('admin/danhsachnhasanxuat','NhasanxuatController');
 Route::resource('admin/danhsachnhanvien','NhanvienController');
+Route::resource('admin/hinhthucthanhtoan','HinhthucthanhtoanController');
