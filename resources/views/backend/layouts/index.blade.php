@@ -75,7 +75,7 @@ desired effect
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Tommystore</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -268,32 +268,60 @@ desired effect
         <li class="header">Danh mục</li>
         
         <!-- Danh mục Sản phẩm -->
-        <li class="treeview {{ Request::is('admin/danhsachsanpham*') ? 'menu-open' : '' }}">
+        <li class="treeview {{ Request::is('admin/danhsachnhanvien*') ? 'menu-open' : '' }}">
+        <a href="#"><i class="fa fa-link"></i> <span>Danh mục quyền</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachquyen*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachquyen/create') ? 'active' : '' }}"><a href="{{ route('danhsachquyen.index') }}">Quyền</a></li>
+            <li class="{{ Request::is('admin/danhsachquyen/create') ? 'active' : '' }}"><a href="{{ route('danhsachquyen.create') }}">Thêm quyền</a></li>
+          </ul>
+          <a href="#"><i class="fa fa-link"></i> <span>Danh mục nhân viên</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachnhanvien*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachnhanvien') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.index') }}">Nhân viên</a></li>
+            <li class="{{ Request::is('admin/danhsachnhanvien/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.create') }}">Thêm mới nhân viên</a></li>
+          </ul>
+          <a href="#"><i class="fa fa-link"></i> <span>Danh mục sản phẩm</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachnhasanxuat*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachnhasanxuat') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.index') }}">Nhà sản xuất</a></li>
+            <li class="{{ Request::is('admin/danhsachnhasanxuat/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.create') }}">Thêm mới nhà sản xuất</a></li>
+          </ul>
+          <a href="#"><i class="fa fa-link"></i> <span>Danh mục loại</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachloai*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/danhsachloai') ? 'active' : '' }}"><a href="{{ route('danhsachloai.index') }}">Loại sản phẩm</a></li>
+            <li class="{{ Request::is('admin/danhsachloai/create') ? 'active' : '' }}"><a href="{{ route('danhsachloai.create') }}">Thêm mới loại sản phẩm</a></li>
+          </ul>
           <a href="#"><i class="fa fa-link"></i> <span>Danh mục sản phẩm</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
-            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.index') }}">Nhân viên</a></li>
-            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachquyen.create') }}">Quyền</a></li>
-            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhanvien.create') }}">Thêm mới nhân viên</a></li>
-          </ul>
-          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
-            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.index') }}">Nhà sản xuất</a></li>
-            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachnhasanxuat.create') }}">Thêm mới nhà sản xuất</a></li>
-          </ul>
-          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
-            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachloai.index') }}">Loại sản phẩm</a></li>
-            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachloai.create') }}">Thêm mới loại sản phẩm</a></li>
-          </ul>
-          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
             <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('danhsachsanpham.index') }}">Sản phẩm</a></li>
             <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('danhsachsanpham.create') }}">Thêm mới sản phẩm</a></li>
           </ul>
-          <ul class="treeview-menu" style="display: {{ Request::is('admin/danhsachsanpham*') ? 'block' : 'none' }};">
-            <li class="{{ Request::is('admin/danhsachsanpham') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.index') }}">Hình thức thanh toán</a></li>
-            <li class="{{ Request::is('admin/danhsachsanpham/create') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.create') }}">Thêm mới HTTT</a></li>
+          <a href="#"><i class="fa fa-link"></i> <span>Danh mục HTTT</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu" style="display: {{ Request::is('admin/hinhthucthanhtoan*') ? 'block' : 'none' }};">
+            <li class="{{ Request::is('admin/hinhthucthanhtoan') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.index') }}">Hình thức thanh toán</a></li>
+            <li class="{{ Request::is('admin/hinhthucthanhtoan/create') ? 'active' : '' }}"><a href="{{ route('hinhthucthanhtoan.create') }}">Thêm mới HTTT</a></li>
           </ul>
         </li>
         <!-- /.Danh mục Sản phẩm -->

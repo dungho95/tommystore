@@ -22,3 +22,4 @@ Route::resource('admin/danhsachquyen','QuyenController');
 Route::resource('admin/danhsachnhasanxuat','NhasanxuatController');
 Route::resource('admin/danhsachnhanvien','NhanvienController');
 Route::resource('admin/hinhthucthanhtoan','HinhthucthanhtoanController');
+Route::resource('admin/danhsachsanpham','SanphamController');
